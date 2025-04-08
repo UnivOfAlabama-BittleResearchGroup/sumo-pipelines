@@ -69,6 +69,7 @@ def run_sumo(
 
     if config.simulation_output:
         with open(config.simulation_output, "w") as f:
+            f.write(" ".join(sumo_cmd))
             s = subprocess.run(sumo_cmd, check=True, stdout=f, stderr=f)
     else:
         s = subprocess.run(
