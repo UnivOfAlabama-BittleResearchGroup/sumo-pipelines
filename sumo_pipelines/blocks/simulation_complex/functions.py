@@ -189,6 +189,7 @@ def traci_priority_light_control(
 
     if config.simulation_output:
         f = open(config.simulation_output, "w")
+        f.write(" ".join(sumo_cmd))
 
     libsumo.start(sumo_cmd, stdout=f)
 
