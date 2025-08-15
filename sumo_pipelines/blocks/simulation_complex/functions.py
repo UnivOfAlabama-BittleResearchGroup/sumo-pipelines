@@ -316,6 +316,13 @@ def traci_priority_light_control(
             for i, (_, phase_holders) in enumerate(lights.values()):
                 for p_num, phase in phase_holders.items():
                     if p_num in best_combo[i]:
+
+                        # Side Road Protection Logic
+                        if not phase.on and best_combo[i] != (2, 6):
+                            for veh_id in list(phase._ids):
+                                if veh_id in phase.accumulated_wtime_holder:
+                                    phase.accumulated_wtime_holder[veh_id] -= 1000000
+
                         phase.turn_on()
                     else:
                         phase.turn_off()

@@ -12,18 +12,18 @@ class ComplexSimulationConfig(SimulationConfig):
 @dataclass
 class IntersectionWeights:
     mainline_a: float = 1.0
-    mainline_b: float = 1.0
-    mainline_c: float = 1.0
-    mainline_d: float = 0
-    mainline_e: float = 0
+    mainline_b: float = 0.7290
+    mainline_c: float = 0.0045
+    mainline_d: float = 0 # Please keep this as 0
+    mainline_e: float = 0 # Please keep this as 0
 
-    side_a: float = 1.0
-    side_b: float = 1.0
-    side_c: float = 1.0
-    side_d: float = 0
+    side_a: float = 0.5197
+    side_b: float = 0.3635
+    side_c: float = 0.0093
+    side_d: float = 0 # Please keep this as 0
 
-    truck_waiting_time_factor: float = 1.0
-    truck_speed_factor: float = 1.0
+    truck_waiting_time_factor: float = 2.0
+    truck_speed_factor: float = 7.0
 
 
 ControlledIntersections = List[
