@@ -332,13 +332,6 @@ def traci_priority_light_control(
                         
                         phase_total = speed_component + wait_component + base_component
                         combo_score += phase_total
-                        
-                        # Debug output showing score breakdown
-                        if tl == '63082004':
-                            print(f"  Phase {phase}: speed={speed_component:.2f}, "
-                                  f"wait={wait_component:.2f}, base={base_component:.2f}")
-                            print(f"    accumulated_wtime={phase_holders[phase].accumulated_wtime:.2f}")
-                            print(combo_score)
                     
                     # Store total score for this combination
                     combo_scores[-1][combo] = combo_score
